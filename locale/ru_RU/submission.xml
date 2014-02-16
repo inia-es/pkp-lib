@@ -367,8 +367,8 @@
 	<message key="submissions.noSubmissions">Нет материалов</message>
 	<message key="submissions.queuedEditing">На редакции</message>
 	<message key="submissions.queued">В очереди</message>
-	<message key="submissions.queuedUnassigned">Ждет назначения</message>
-	<message key="submissions.ruling">Решение</message>
+	<message key="submissions.queuedUnassigned">Ждут назначения</message>
+	<message key="submissions.ruling">Правила</message>
 	<message key="submissions.submit">Отправка</message>
 	<message key="submissions.submitted">Прислана</message>
 	<message key="submission.start">Начало</message>
