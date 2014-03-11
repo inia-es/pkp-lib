@@ -6,8 +6,8 @@
 /**
  * @file classes/admin/form/PKPSiteSettingsForm.inc.php
  *
- * Copyright (c) 2013-2014 Simon Fraser University Library
- * Copyright (c) 2000-2014 John Willinsky
+ * Copyright (c) 2013 Simon Fraser University Library
+ * Copyright (c) 2000-2013 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class SiteSettingsForm
@@ -126,10 +126,10 @@ class PKPSiteSettingsForm extends Form {
 			$site->updateSetting('pageHeaderTitleImage', $setting, 'object', true);
 		}
 
-		$site->updateSetting('showThumbnail', $this->getData('showThumbnail'), 'bool');
-		$site->updateSetting('showTitle', $this->getData('showTitle'), 'bool');
-		$site->updateSetting('showDescription', $this->getData('showDescription'), 'bool');
-		$site->updateSetting('oneStepReset', $this->getData('oneStepReset'), 'bool');
+		$site->updateSetting('showThumbnail', $this->getData('showThumbnail'), bool);
+		$site->updateSetting('showTitle', $this->getData('showTitle'), bool);
+		$site->updateSetting('showDescription', $this->getData('showDescription'), bool);
+		$site->updateSetting('oneStepReset', $this->getData('oneStepReset'), bool);
 
 		$siteDao->updateObject($site);
 		return true;
