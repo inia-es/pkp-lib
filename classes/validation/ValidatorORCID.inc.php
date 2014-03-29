@@ -3,8 +3,8 @@
 /**
  * @file classes/validation/ValidatorORCID.inc.php
  *
- * Copyright (c) 2013-2014 Simon Fraser University Library
- * Copyright (c) 2000-2014 John Willinsky
+ * Copyright (c) 2013 Simon Fraser University Library
+ * Copyright (c) 2000-2013 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ValidatorORCID
@@ -44,16 +44,17 @@ class ValidatorORCID extends ValidatorRegExp {
 
 		$total = 0;
 		for ($i=0; $i<15; $i++) {
-			$digit = (int) $orcid[$i];
-			$total = ($total + $digit) *2;
+			// convert X to 10
+			if ($orcid[i] == "X") {
+				$orcid[i] = 10;
+			}
+			$total += $orcid[$i] * 2;
 		}
 		
 		$remainder = $total % 11;
 		$result = (12 - $remainder) % 11;
-
-		$checkDigit = ($result==10?'X':$result);
-		if ($checkDigit == $orcid[15]) return true;
-		return false;
+		
+		return ($orcid[15] == $result ? "X" : $result);
 	}
 
 	//
