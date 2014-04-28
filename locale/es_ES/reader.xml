@@ -71,7 +71,7 @@
 	<message key="rt.admin.selectedVersion">Elementos relacionados</message>
 	<message key="rt.admin.settings.abstract">Resumen (presenta el resumen del elemento).</message>
 	<message key="rt.admin.settings.authorBio">Acerca del autor/a (muestra la información sobre la biografía del autor/a introducida por él/ella).</message>
-	<message key="rt.admin.settings.captureCite">Cómo citar el elemento (ofrece los detalles bibliográficos del elemento).</message>
+	<message key="rt.admin.settings.captureCite">Exportar cita (ofrece los detalles bibliográficos del elemento).</message>
 	<message key="rt.admin.settings.defineTerms">Buscar términos (permite a los lectores/as hacer doble clic en cualquier palabra de un elemento y enviarla a un diccionario).</message>
 	<message key="rt.admin.settings.disableRelatedItems">Deshabilitar elementos relacionados</message>
 	<message key="rt.admin.settings.emailAuthor">Enviar un correo electrónico al autor/a (abre una plantilla de correo electrónico con la dirección del autor/a).</message>
