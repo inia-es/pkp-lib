@@ -70,6 +70,7 @@
 	<message key="user.repeatPassword">Repetir contraseña</message>
 	<message key="user.phone">Teléfono</message>
 	<message key="user.profile.changePasswordInstructions">Introduzca la contraseña actual y la nueva para cambiar la contraseña de su cuenta.</message>
+	<message key="user.profile.form.interestsRequired">Interests es requerido.</message>
 	<message key="user.profile.editProfile">Editar perfil</message>
 	<message key="user.profile.form.emailRequired">Se requiere una dirección de correo electrónico válida.</message>
 	<message key="user.profile.form.affiliationRequired">Se requiere el nombre de la institución.</message>
