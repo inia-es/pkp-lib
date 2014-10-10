@@ -4,8 +4,8 @@
 <!--
   * locale/fr_CA/manager.xml
   *
-  * Copyright (c) 2000-2013 Simon Fraser University Library
-  * Copyright (c) 2000-2013 John Willinsky
+  * Copyright (c) 2000-2014 Simon Fraser University Library
+  * Copyright (c) 2000-2014 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the fr_CA (Français (Canada)) locale.
@@ -32,6 +32,8 @@
 	<message key="manager.announcements.form.descriptionShortInstructions">Une brève description apparaîtra à côté du titre de l'annonce.</message>
 	<message key="manager.announcements.form.descriptionShortRequired">La brève description de l'annonce est obligatoire.</message>
 	<message key="manager.announcements.form.descriptionShort">Brève description</message>
+	<message key="manager.announcements.form.notificationToggle">Envoyer une notification</message>
+	<message key="manager.announcements.form.notificationToggleInstructions">Créer une nouvelle notification lors de l'enregistrement de cette annonce.</message>
 	<message key="manager.announcements.form.saveAndCreateAnother">Enregistrer et en créer un autre</message>
 	<message key="manager.announcements.form.titleRequired">Le titre de l'annonce est obligatoire.</message>
 	<message key="manager.announcements.form.title">Titre</message>
