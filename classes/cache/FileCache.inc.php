@@ -36,11 +36,8 @@ class FileCache extends GenericCache {
 	 */
 	function FileCache($context, $cacheId, $fallback, $path) {
 		parent::GenericCache($context, $cacheId, $fallback);
-		//Cambiado INIA
 
-		$replaceid=str_replace(array('\\',':'), '.', $cacheId);
-		$this->filename = $path . DIRECTORY_SEPARATOR;
-		$this->filename .= "fc-$context-" . $replaceid . '.php';
+		$this->filename = $path . DIRECTORY_SEPARATOR . "fc-$context-" . str_replace('/', '.', $cacheId) . '.php';
 
 		// Load the cache data if it exists.
 		if (file_exists($this->filename)) {
