@@ -3,8 +3,8 @@
 /**
  * @file pages/announcement/PKPAnnouncementHandler.inc.php
  *
- * Copyright (c) 2013 Simon Fraser University Library
- * Copyright (c) 2000-2013 John Willinsky
+ * Copyright (c) 2013-2014 Simon Fraser University Library
+ * Copyright (c) 2000-2014 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class PKPAnnouncementHandler
@@ -72,10 +72,10 @@ class PKPAnnouncementHandler extends Handler {
 				$templateMgr->append('pageHierarchy', array($request->url(null, 'announcement'), 'announcement.announcements'));
 				$templateMgr->display('announcement/view.tpl');
 			} else {
-				$request->redirect(null, null, 'announcement');
+				$request->redirect(null, 'announcement');
 			}
 		} else {
-			$request->redirect(null, null, 'announcement');
+			$request->redirect(null, 'announcement');
 		}
 	}
 
