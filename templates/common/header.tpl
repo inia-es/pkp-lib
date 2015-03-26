@@ -1,8 +1,8 @@
 {**
  * header.tpl
  *
- * Copyright (c) 2013-2014 Simon Fraser University Library
- * Copyright (c) 2000-2014 John Willinsky
+ * Copyright (c) 2013-2015 Simon Fraser University Library
+ * Copyright (c) 2000-2015 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Common site header.
@@ -109,7 +109,6 @@
 						if (notifications && notifications.general) {ldelim}
 							$.each(notifications.general, function(notificationLevel, notificationList) {ldelim}
 								$.each(notificationList, function(notificationId, notification) {ldelim}
-									console.log(notification);
 									$.pnotify(notification);
 								{rdelim});
 							{rdelim});
