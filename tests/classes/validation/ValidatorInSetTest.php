@@ -3,8 +3,8 @@
 /**
  * @file tests/classes/validation/ValidatorInSetTest.inc.php
  *
- * Copyright (c) 2013-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2013-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class ValidatorInSetTest
@@ -23,12 +23,15 @@ class ValidatorInSetTest extends PKPTestCase {
 	 * @covers Validator
 	 */
 	public function testValidatorInSet() {
-		$validator = new ValidatorInSet(array(0, 1, 'a', 'B'));
-		self::assertTrue($validator->isValid(0)); // Valid for logically false variable
-		self::assertTrue($validator->isValid(1)); // Valid
-		self::assertFalse($validator->isValid('b')); // Loose in_array() checking
+		$validator = new ValidatorInSet(array(1, 2, 'a', 'B'));
+		self::assertTrue($validator->isValid(0)); // Warning: depends on loose in_array(), so a value of 0 will match any string
+		self::assertTrue($validator->isValid(1)); // Value in set
+		self::assertFalse($validator->isValid('b')); // Value not in set
+		self::assertTrue($validator->isValid('1')); // Loose in_array() checking matches strings to numerics
 		$validator = new ValidatorInSet(array());
 		self::assertFalse($validator->isValid(1)); // Any value in empty set
+		$validator = new ValidatorInSet(array(0, 'anything')); // Warning: depends on loose in_array(), so a value of 0 will match any string
+		self::assertTrue($validator->isValid('something')); // Any string value
 	}
 }
 
