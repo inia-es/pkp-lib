@@ -3,8 +3,8 @@
 /**
  * @file classes/announcement/PKPAnnouncementDAO.inc.php
  *
- * Copyright (c) 2013-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2013-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class PKPAnnouncementDAO
@@ -84,7 +84,7 @@ class PKPAnnouncementDAO extends DAO {
 	 * @return array
 	 */
 	function getLocaleFieldNames() {
-		return parent::getLocaleFieldNames() + array('title', 'descriptionShort', 'description');
+		return array_merge(parent::getLocaleFieldNames(), array('title', 'descriptionShort', 'description'));
 	}
 
 	/**
@@ -338,7 +338,8 @@ class PKPAnnouncementDAO extends DAO {
 			FROM announcements
 			WHERE assoc_type = ?
 				AND assoc_id = ?
-				AND (date_expire IS NULL OR date_expire > CURRENT_DATE)
+				AND (date_expire IS NULL OR DATE(date_expire) > CURRENT_DATE)
+				AND (DATE(date_posted) <= CURRENT_DATE)
 			ORDER BY announcement_id DESC',
 			array((int) $assocType, (int) $assocId),
 			$rangeInfo
@@ -359,7 +360,8 @@ class PKPAnnouncementDAO extends DAO {
 			FROM announcements
 			WHERE assoc_type = ?
 				AND assoc_id = ?
-				AND (date_expire IS NULL OR date_expire > CURRENT_DATE)
+				AND (date_expire IS NULL OR DATE(date_expire) > CURRENT_DATE)
+				AND (DATE(date_posted) <= CURRENT_DATE)
 			ORDER BY announcement_id DESC LIMIT ?',
 			array((int) $assocType, (int) $assocId, (int) $numAnnouncements),
 			$rangeInfo
@@ -370,16 +372,18 @@ class PKPAnnouncementDAO extends DAO {
 	}
 
 	/**
-	 * Retrieve most recent announcement by Assoc ID.
+	 * Retrieve most recent published announcement by Assoc ID.
 	 * @param $assocType int
 	 * @return Announcement
 	 */
-	function &getMostRecentAnnouncementByAssocId($assocType, $assocId) {
+	function &getMostRecentPublishedAnnouncementByAssocId($assocType, $assocId) {
 		$result =& $this->retrieve(
-			'SELECT *
-			FROM announcements
-			WHERE assoc_type = ?
+			'SELECT	*
+			FROM	announcements
+			WHERE	assoc_type = ?
 				AND assoc_id = ?
+				AND (date_expire IS NULL OR DATE(date_expire) > CURRENT_DATE)
+				AND (DATE(date_posted) <= CURRENT_DATE)
 			ORDER BY announcement_id DESC LIMIT 1',
 			array((int) $assocType, (int) $assocId)
 		);

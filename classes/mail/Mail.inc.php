@@ -7,8 +7,8 @@
 /**
  * @file classes/mail/Mail.inc.php
  *
- * Copyright (c) 2013-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2013-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class Mail
@@ -353,7 +353,7 @@ class Mail extends DataObject {
 	 */
 	function getReplyToString($send = false) {
 		$replyTo = $this->getReplyTo();
-		if ($replyTo == null) {
+		if (!array_key_exists('email', $replyTo) || $replyTo['email'] == null) {
 			return null;
 		} else {
 			return (Mail::encodeDisplayName($replyTo['name'], $send) . ' <'.$replyTo['email'].'>');
@@ -405,11 +405,7 @@ class Mail extends DataObject {
 			$display = $from['name'];
 			$address = $from['email'];
 			if (Config::getVar('email', 'force_default_envelope_sender') && Config::getVar('email', 'default_envelope_sender')) {
-				$address = Config::getVar('email', 'default_envelope_sender');
-				$replyTo = $this->getReplyTo();
-				if ($replyTo['name']) {
-					$display = $replyTo['name'];
-				}
+				return Config::getVar('email', 'default_envelope_sender');
 			}
 			return (Mail::encodeDisplayName($display, $send) . ' <'.$address.'>');
 		}

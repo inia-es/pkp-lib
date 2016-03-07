@@ -4,15 +4,15 @@
 <!--
   * locale/ru_RU/reviewer.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2000-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2000-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Localization strings for the ru_RU (Russian) locale.
+  * Localization strings for the ru_RU (Русский) locale.
   * With updates from Pavel Pisklakov (revising translation). 
   -->
 
-<locale name="ru_RU" full_name="Russian">
+<locale name="ru_RU" full_name="Русский">
 	<!-- Используется в процессе рецензирования -->
 	<message key="reviewer.reviewSteps.request">1. Запрос</message>
 	<message key="reviewer.reviewSteps.guidelines">2. Руководство</message>
