@@ -3,8 +3,8 @@
 <!--
   * locale/es_ES/grid.xml
   *
-  * Copyright (c) 2014-2015 Simon Fraser University Library
-  * Copyright (c) 2000-2015 John Willinsky
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2000-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Credits: http://pkp.sfu.ca/wiki/index.php?title=OJS:_Spanish_%28es_ES%29
@@ -58,7 +58,6 @@
 	<message key="grid.action.sendToProduction">Enviar el envío para producción</message>
 	<message key="grid.action.settings">Configuración</message>
 	<message key="grid.action.importexport">Importar o exportar contenido o datos del sitio</message>
-	<message key="grid.action.restoreDefaults">Restaurar valores predeterminados</message>
 	<message key="grid.action.orderItems">Habilitar modo pedido</message>
 	<message key="grid.action.editSubmissionChecklist">Editar elemento de la lista de comprobación</message>
 	<message key="grid.action.deleteSubmissionChecklist">Eliminar elemento de la lista de comprobación</message>

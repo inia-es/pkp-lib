@@ -4,8 +4,8 @@
 <!--
   * locale/en_US/manager.xml
   *
-  * Copyright (c) 2013-2015 Simon Fraser University Library
-  * Copyright (c) 2000-2015 John Willinsky
+  * Copyright (c) 2013-2016 Simon Fraser University Library
+  * Copyright (c) 2000-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
   * Localization strings for the en_US (English) locale.
@@ -81,6 +81,10 @@
 	<message key="manager.emails.reset">Reset</message>
 	<message key="manager.emails.reset.message">If you reset this template, all message data will be reset to its default value, losing all modifications.  Do you want to confirm this operation?</message>
 	<message key="manager.emails.resetToDefault">Reset To Default</message>
+	<message key="manager.emails.exportXML">Export selected email templates as XML</message>
+	<message key="manager.emails.uploadXML">Upload XML file</message>
+	<message key="manager.emails.uploadSuccess">The selected email templates were updated successfully</message>
+	<message key="manager.emails.uploadError">File upload failed</message>
 	<message key="manager.filesBrowser">Files Browser</message>
 	<message key="manager.files.confirmDelete">Delete this file or directory? Note that a directory must be empty before it can be deleted.</message>
 	<message key="manager.files.createDir">Create Directory</message>

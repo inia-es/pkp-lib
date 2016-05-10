@@ -1,8 +1,8 @@
 {**
  * templates/install/install.tpl
  *
- * Copyright (c) 2013-2015 Simon Fraser University Library
- * Copyright (c) 2000-2015 John Willinsky
+ * Copyright (c) 2013-2016 Simon Fraser University Library
+ * Copyright (c) 2000-2016 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Installation form.
@@ -266,6 +266,22 @@ function doSubmit() {
 
 	<div class="separator"></div>
 </div>
+
+<div id="beaconDiv">
+	<h3>{translate key="installer.beacon"}</h3>
+
+	<table width="100%" class="data">
+		<tr valign="top">
+			<td width="20%" class="label">&nbsp;</td>
+			<td width="80%" class="value">
+				<input type="checkbox" name="enableBeacon" id="enableBeacon" {if $enableBeacon}checked="checked" {/if}/>
+				{fieldLabel name="enableBeacon" key="installer.beacon.enable"}
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div class="separator"></div>
 
 <p><input name="install" type="button" id="install" value="{translate key="installer.installApplication"}" class="button defaultButton" onclick="doSubmit()" /></p>
 
