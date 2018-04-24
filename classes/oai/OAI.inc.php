@@ -247,7 +247,9 @@ class OAI {
 			"\t\t\t\t<datestamp>" . $record->datestamp . "</datestamp>\n";
 		// Output set memberships
 		foreach ($record->sets as $setSpec) {
-			$response .= "\t\t\t\t<setSpec>$setSpec</setSpec>\n";
+			//sustituimos caracter + por _ en las secciones
+			//$response .= "\t\t\t\t<setSpec>$setSpec</setSpec>\n";
+			$response .= "\t\t\t\t<setSpec>" . str_replace('+','_',$setSpec) . "</setSpec>\n";
 		}
 		$response .= "\t\t\t</header>\n";
 		if (!empty($record->data)) {
@@ -391,7 +393,9 @@ class OAI {
 				"\t\t\t<datestamp>" . $record->datestamp . "</datestamp>\n";
 			// Output set memberships
 			foreach ($record->sets as $setSpec) {
-				$response .= "\t\t\t<setSpec>" . OAIUtils::prepOutput($setSpec) . "</setSpec>\n";
+				//sustituimos caracter + por _ en las secciones
+				//$response .= "\t\t\t<setSpec>" . OAIUtils::prepOutput($setSpec) . "</setSpec>\n";
+				$response .= "\t\t\t<setSpec>" . OAIUtils::prepOutput(str_replace('+','_',$setSpec)) . "</setSpec>\n";
 			}
 			$response .= "\t\t</header>\n";
 		}
@@ -534,7 +538,9 @@ class OAI {
 				"\t\t\t\t<datestamp>" . $record->datestamp . "</datestamp>\n";
 			// Output set memberships
 			foreach ($record->sets as $setSpec) {
-				$response .= "\t\t\t\t<setSpec>" . OAIUtils::prepOutput($setSpec) . "</setSpec>\n";
+				//sustituimos caracter + por _ en las secciones
+				//$response .= "\t\t\t\t<setSpec>" . OAIUtils::prepOutput($setSpec) . "</setSpec>\n";
+				$response .= "\t\t\t\t<setSpec>" . OAIUtils::prepOutput(str_replace('+','_',$setSpec)) . "</setSpec>\n";
 			}
 			$response .= "\t\t\t</header>\n";
 			if (!empty($record->data)) {
@@ -612,10 +618,18 @@ class OAI {
 		// Output sets
 		for ($i = 0, $num = count($sets); $i < $num; $i++) {
 			$set = $sets[$i];
-			$response .=	"\t\t<set>\n" .
-					"\t\t\t<setSpec>" . OAIUtils::prepOutput($set->spec) . "</setSpec>\n" .
-					"\t\t\t<setName>" . OAIUtils::prepOutput($set->name) . "</setName>\n";
-			// output set description, if applicable
+			
+			//sustituimos caracter + por _ en las secciones
+			//$response .=	"\t\t<set>\n" .
+			//		"\t\t\t<setSpec>" . OAIUtils::prepOutput($set->spec) . "</setSpec>\n" .
+			//		"\t\t\t<setName>" . OAIUtils::prepOutput($set->name) . "</setName>\n";
+		
+	
+			 $response .=  "\t\t<set>\n" .
+                                      "\t\t\t<setSpec>" . OAIUtils::prepOutput(str_replace('+','_',$set->spec)) . "</setSpec>\n" .
+                                      "\t\t\t<setName>" . OAIUtils::prepOutput($set->name) . "</setName>\n";
+
+// output set description, if applicable
 			if (isset($set->description)) {
 				$response .=	"\t\t\t<setDescription>\n" .
 						"\t\t\t\t<oai_dc:dc\n" .
